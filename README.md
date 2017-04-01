@@ -1,4 +1,5 @@
 # Tender Buttons
+[http://www.tender-buttons.com/]
 
 Landing page and contact form for Digital Preservation Consultancy.
 Built using React, Redux, and React Router. 
@@ -17,5 +18,4 @@ We work in all formats including:
   * misc. other born-digital materials
 
 ## What's with the name? 
-The name comes from a 1914 book, _Tender Buttons_ Gertrude Stein. The short book consists of multiple poems describing everyday objects in  experimental language.
-
+The name comes from a 1914 book, [_Tender Buttons_](http://www.bartleby.com/140/), by Gertrude Stein. The short book consists of multiple poems describing everyday objects in  experimental language.
