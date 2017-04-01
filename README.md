@@ -1,5 +1,5 @@
 # Tender Buttons
-[http://www.tender-buttons.com/]
+[tender-buttons.com](http://www.tender-buttons.com/)
 
 Landing page and contact form for Digital Preservation Consultancy.
 Built using React, Redux, and React Router. 
