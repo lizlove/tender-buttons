@@ -1,0 +1,28 @@
+{
+  "name": "tender-buttons",
+  "version": "1.0.0",
+  "description": "Digital Preservation Consultancy",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "kl"
+  },
+  "keywords": [
+    "digital",
+    "preservation",
+    "born-digital",
+    "archives",
+    "new",
+    "media"
+  ],
+  "author": "Elizabeth Lovero",
+  "license": "MIT"
+}
