@@ -5,7 +5,9 @@
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.17.1",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "devDependencies": {},
   "scripts": {
@@ -13,15 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "kl"
+    "url": "https://github.com/lizlove/tender-buttons.git"
   },
   "keywords": [
     "digital",
     "preservation",
     "born-digital",
     "archives",
-    "new",
-    "media"
+    "Lovero"
   ],
   "author": "Elizabeth Lovero",
   "license": "MIT"
