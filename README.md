@@ -14,7 +14,7 @@ We work in all formats including:
   * IMAGES
   * SOFTWARE
   * VIDEO
-  *_AND OTHER BORN-DIGITAL MATERIALS_
+  * _AND OTHER BORN-DIGITAL MATERIALS_
 
 ## What's with the name? 
 The name comes from a 1914 book, _Tender Buttons_ Gertrude Stein. The short book consists of multiple poems describing everyday objects in  experimental language.
