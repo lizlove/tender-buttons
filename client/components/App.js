@@ -8,7 +8,6 @@ export default class App extends React.Component {
     return (
       <div className="is-loading">
     			<div id="wrapper">
-
     					<section id="main">
     						<header>
     							<span className="avatar"><img src="images/avatar.jpg" alt="avatar" /></span>
