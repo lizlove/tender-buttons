@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 
 module.exports = {
   entry: './client/index.js',
@@ -11,8 +12,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ ,
-      { test: /\.css$/, loaders: ['style', 'css', 'sass']}
+      { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/} ,
     ],
   },
   plugins: [
@@ -20,6 +20,10 @@ module.exports = {
       template: './client/index.html',
       filename: 'index.html',
       inject: 'body'
+    }),
+    new HtmlWebpackIncludeAssetsPlugin({
+      assets: ['./client/stylesheets/style.css'],
+      append: true
     })
   ]
 }

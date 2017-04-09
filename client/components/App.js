@@ -10,7 +10,7 @@ export default class App extends React.Component {
     			<div id="wrapper">
     					<section id="main">
     						<header>
-    							<span className="avatar"><img src="images/avatar.jpg" alt="avatar" /></span>
+    							<span className="avatar"><img src="http://elizabethlovero.com/img/tb/images/avatar.jpg" alt="avatar" /></span>
     							<h1>Tender Buttons</h1>
     							<p>Digital Preservation Consulting</p>
     						</header>

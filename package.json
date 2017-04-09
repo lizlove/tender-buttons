@@ -5,10 +5,14 @@
   "repository": "https://github.com/lizlove/tender-buttons.git",
   "author": "elizabeth lovero, elizabethlovero.com",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "prebuild-css": "node-sass --include-path scss ./client/sass/main.scss ./client/stylesheets/style.css",
+    "min-css": "postcss ./client/stylesheets/style.css --use autoprefixer -b 'last 2 versions' -o ./client/stylesheets/style.css | postcss ./client/stylesheets/style.css --use cssnano -o ./dist/stylesheets/style.css",
+    "build-css": "yarn run prebuild-css && yarn run min-css"
   },
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^6.7.7",
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
     "babel-preset-es2015": "^6.24.0",
@@ -16,14 +20,19 @@
     "css-loader": "^0.28.0",
     "html-webpack-plugin": "^2.26.0",
     "node-sass": "^4.5.2",
+    "postcss": "^5.2.16",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
     "webpack": "^2.3.2"
   },
   "dependencies": {
     "body-parser": "^1.17.1",
+    "cssnano": "^3.10.0",
     "express": "^4.15.2",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "html-webpack-include-assets-plugin": "^0.0.5",
     "path": "^0.12.7",
+    "postcss-cli": "^3.1.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "request": "^2.81.0",
