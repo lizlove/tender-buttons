@@ -1,14 +1,15 @@
 {
   "name": "tender-buttons",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "repository": "https://github.com/lizlove/tender-buttons.git",
   "author": "elizabeth lovero, elizabethlovero.com",
   "scripts": {
     "start": "webpack-dev-server",
-    "prebuild-css": "node-sass --include-path scss ./client/sass/main.scss ./client/stylesheets/style.css",
-    "min-css": "postcss ./client/stylesheets/style.css --use autoprefixer -b 'last 2 versions' -o ./client/stylesheets/style.css | postcss ./client/stylesheets/style.css --use cssnano -o ./dist/stylesheets/style.css",
-    "build-css": "yarn run prebuild-css && yarn run min-css"
+    "prebuild-css": "node-sass --include-path scss ./src/sass/main.scss ./src/stylesheets/style.css",
+    "min-css": "postcss ./src/stylesheets/style.css --use autoprefixer -b 'last 2 versions' -o ./src/stylesheets/style.css | postcss ./src/stylesheets/style.css --use cssnano -o ./public/stylesheets/style.css",
+    "build-css": "yarn run prebuild-css && yarn run min-css",
+    "build-app": "webpack -p"
   },
   "license": "MIT",
   "devDependencies": {
