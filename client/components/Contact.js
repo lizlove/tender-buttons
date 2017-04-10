@@ -1,6 +1,14 @@
 import React, {PropTypes} from 'react';
 
-export default class Contact extends React.Component {
+class Contact extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  handleMessageSubmit(){
+
+  }
+
   render() {
     return (
       <div>
@@ -32,3 +40,5 @@ export default class Contact extends React.Component {
     );
   }
 }
+
+module.exports = Contact;
