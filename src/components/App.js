@@ -12,30 +12,10 @@ import Home from './Home.js';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      name: "",
-      email: "",
-      message: "",
-      human: false,
-      robot: true,
-    }
-
   }
-
-  handleStateChange(key, value) {
-    let newState = Object.assign({}, this.state);
-    ObjectUtilities.nestedProperty(newState, key, value);
-    this.setState(newState);
-  }
-
-  handleMessageSubmit(){
-    console.log('submited', this.state);
-  }
-
   render() {
     return (
-      <Router>
+      <Router history={this.props.history}> 
       <div className="is-loading">
     			<div id="wrapper">
     					<section id="main">
