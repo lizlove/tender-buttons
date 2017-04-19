@@ -11,19 +11,19 @@ class Form extends React.Component {
   }
 
   sendEmail(){
-    const postData = `Contact from: ${this.props.name}, at: ${this.props.email}. Message: ${this.props.message}.`;
-    console.log(postData);
-    fetch('/contactus', {
+    const postData = {data: `Contact from ${this.props.name}, at ${this.props.email}. The message is... ${this.props.message}.`};
+    console.log(JSON.stringify(postData));
+    fetch('http://localhost:8080/contactus', {
               method: 'POST',
+              body:  JSON.stringify(postData),
               headers: {
-                'Accept': 'application/json',
                 'Content-Type': 'application/json',
               },
-              body: JSON.stringify(postData)
+              mode: 'no-cors'
             })
           	.then(response => response.json())
             .then(data => console.log(`Email has been scheduled`, data))
-            .catch((error) => console.error(error))
+            .catch(error => this.props.emailSendFailure("Sorry, an email error has occured."))
   }
 
   handleMessageSubmit(){
