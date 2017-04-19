@@ -97,6 +97,10 @@
 	h6 {
 		font-size: 1em;
 	}
+	p.error {
+		color: #ff7496;
+		font-weight: bold;
+	}
 
 	@include breakpoint(xsmall) {
 		h1 {
