@@ -18,7 +18,6 @@ app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:htt
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.post('/contactus', function (req, res) {
-  console.log(req.body.data, 'THIS IS THE END');
   mailer.send(
     { host:           "smtp.mandrillapp.com"
     , port:           587
@@ -33,13 +32,13 @@ app.post('/contactus', function (req, res) {
       if(err){
         res.render('error', { error: err })
       } else {
-        console.log('res', res);
+        res.send('Email Send', res);
       }
     }
   );
 });
 
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 

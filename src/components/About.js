@@ -8,10 +8,11 @@ export default class About extends React.Component {
         <h1>About</h1>
         <div>
           <div className="field">
-           <p className="about">We recover data from obsolete formats and help you plan for the long-term preservation of your digital information.</p>
+           <p className="about">We help you plan for the long-term preservation of your digital information.</p>
+           <p className="about">Recover data from obsolete formats, digitize your materials, and develop strategies for migration.</p>
           </div>
           <ul className="formats">
-            <li><em>We work with:</em></li>
+            <li><em>We work with all formats:</em></li>
             <li>Audio</li>
             <li>Documents</li>
             <li>Email</li>

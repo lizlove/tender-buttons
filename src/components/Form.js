@@ -8,11 +8,11 @@ class Form extends React.Component {
 
     this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
     this.sendEmail = this.sendEmail.bind(this);
+    this.verifyHumanity = this.verifyHumanity.bind(this);
   }
 
   sendEmail(){
     const postData = {data: `Contact from ${this.props.name}, at ${this.props.email}. The message is... ${this.props.message}.`};
-    console.log(JSON.stringify(postData));
     fetch('http://localhost:8080/contactus', {
               method: 'POST',
               body:  JSON.stringify(postData),
@@ -21,23 +21,34 @@ class Form extends React.Component {
               },
               mode: 'no-cors'
             })
-          	.then(response => response.json())
-            .then(data => console.log(`Email has been scheduled`, data))
-            .catch(error => this.props.emailSendFailure("Sorry, an email error has occured."))
+          	.then(response => console.log('DID THIS'))
+            .then(data => this.props.emailSendSuccess())
+            .catch(error => this.props.emailSendFailure("Sorry, an error has occured. Please try again"))
+  }
+
+  verifyHumanity(){
+    switch (this.props){
+      case isRobot:
+        return "Sorry, robots not allowed.";
+        break;
+      case !isHuman:
+        return "Sorry, humans only.";
+        break;
+      case !email:
+        return "Sorry, email address required.";
+        break;
+      case !name:
+        return "Sorry, name is required.";
+        break;
+      default:
+        return true;
+        break;
+      }
   }
 
   handleMessageSubmit(){
-    if (this.props.isRobot){
-      this.props.emailSendFailure("Sorry, robots not allowed.");
-    } else if (!this.props.isHuman) {
-      this.props.emailSendFailure("Sorry, humans only.");
-    } else if (!this.props.email) {
-      this.props.emailSendFailure("Sorry, email address required.");
-    } else if (!this.props.name) {
-      this.props.emailSendFailure("Sorry, name is required.");
-    } else {
-      this.sendEmail();
-    }
+    let humanity = this.verifyHumanity;
+    humanity ? this.sendEmail() : this.props.emailSendFailure(humanity);
   }
 
   render() {
@@ -97,7 +108,7 @@ class Form extends React.Component {
               <label onClick={e => this.props.updateIsRobot(false)}>No</label>
             </div>
             <ul className="actions">
-              <li><a className="button" onClick={this.handleMessageSubmit}>Get Started</a></li>
+              <li><a className="button" onClick={this.handleMessageSubmit}>Submit</a></li>
             </ul>
           </form>
           <hr />
