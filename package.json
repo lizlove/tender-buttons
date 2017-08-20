@@ -1,7 +1,7 @@
 {
   "name": "tender-buttons",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "index.js",
   "repository": "https://github.com/lizlove/tender-buttons.git",
   "author": "elizabeth lovero, elizabethlovero.com",
   "scripts": {

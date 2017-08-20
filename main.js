@@ -14,8 +14,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Logger
 app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'));
-
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/*', (req, res) => {
+  res.sendFile(express.static(path.join(__dirname, 'public')));
+});
 
 app.post('/contactus', function (req, res) {
   mailer.send(
@@ -38,9 +41,6 @@ app.post('/contactus', function (req, res) {
   );
 });
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
-});
 
 app.listen(port);
 console.log('Server started! At http://localhost:' + port);
