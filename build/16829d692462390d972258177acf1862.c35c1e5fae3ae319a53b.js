@@ -1,0 +1,1 @@
+webpackJsonp(["16829d692462390d972258177acf1862"],{"./src/components/Home/Home.js":function(a,b,c){"use strict";Object.defineProperty(b,"__esModule",{value:!0});var d=c("./node_modules/react/react.js"),e=c.n(d);b["default"]=()=>e.a.createElement("h1",null,"Home")}});

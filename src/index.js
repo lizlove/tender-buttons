@@ -1,6 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { browserHistory } from 'react-router';
-import App from './components/App.js';
+import { render } from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
 
-ReactDOM.render(<App history={browserHistory}/>, document.getElementById('root'));
+import App from './App';
+
+const renderApp = () => {
+  render(
+    <AppContainer>
+      <App/>
+    </AppContainer>,
+    document.getElementById('root'),
+  );
+};
+
+// This is needed for Hot Module Replacement
+if (module.hot) {
+  module.hot.accept('./App', () => renderApp());
+}
+
+renderApp();
