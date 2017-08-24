@@ -1,6 +1,7 @@
 module.exports = {
   use: [
     'neutrino-preset-react',
+    'neutrino-preset-node'
     neutrino => neutrino.config
       .entry('vendor')
         .add('react')
